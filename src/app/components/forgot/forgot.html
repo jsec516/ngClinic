@@ -1,0 +1,16 @@
+<div id="glab-forgot" data-title="Enter Email Address To Get Password">
+    <form role="form" data-update="#forgotSuccess" class="glab-forgot-form glab-form" action="forgotPassword.php" method="post">
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" required id="email" placeholder="Enter email">
+        </div>
+
+        <button type="submit" class="btn btn-default glab-btn">Submit</button>
+
+        <div class="form-group account-options">
+            <a href="#" class="login-btn" [routerLink]="['Login']">Back To <strong>Login</strong>?</a>
+        </div>
+
+    </form>
+</div>

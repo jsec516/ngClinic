@@ -1,0 +1,238 @@
+.container-fluid.main-wrapper{
+    border-radius:5px;
+}
+
+.banner-container{
+    padding:0px;
+    position:relative;
+}
+
+#banner-title{
+    font-size:17px;
+    font-weight: 400;
+    color: #fff;
+    background: #009933;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding: 10px 5px;
+    text-transform: lowercase;
+    padding-left: 35px;
+
+}
+
+.glab-home{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+}
+
+.glab-home-icon{
+    font-size: 20px;
+    color:#fff;
+}
+
+#nav-menu{
+    position:absolute;
+    right: 0px;
+    top:0px;
+}
+
+.glab-btn.register-btn{
+    border:0px;
+}
+
+
+
+.main-container{
+    padding-bottom:10px;
+}
+
+.glab-form{
+    width: 350px;
+
+    margin:0 auto;
+
+    margin-top:50px;
+
+}
+
+.glab-login-form label{
+
+    text-transform:uppercase;
+    padding-left: 0px;
+
+
+}
+
+.btn.glab-btn{
+
+    background: #009933;
+
+    color: #fff;
+
+}
+
+
+
+.glab-hidden{
+
+    display:none;
+
+}
+
+
+
+.account-options{
+
+    padding-top:10px;
+
+}
+
+.account-options a{
+
+    color:green;
+
+}
+
+.glab-btn.dropdown-toggle{
+
+    border:0px;
+
+}
+
+.btn-group.open .dropdown-toggle{
+
+    background:#009933;
+
+    color:#fff;
+
+    box-shadow:none;
+
+}
+
+.open>.dropdown-menu{
+
+    left:-60px;
+
+    background:#009933;
+
+
+
+}
+
+.dropdown-menu>li>a{
+
+    color:#fff;
+
+}
+
+.app-day-container{
+
+    display:none;
+
+}
+
+.new-btn{
+
+    display:none;
+
+}
+
+.alert-success{
+
+    margin-top:30px;
+
+    display:none;
+
+}
+
+
+
+#schedule-container select{
+
+    height: 34px;
+
+    /*padding: 6px 12px;*/
+
+    font-size: 14px;
+
+    line-height: 1.42857143;
+
+    color: #555;
+
+    background-color: #fff;
+
+    background-image: none;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+}
+
+
+
+.add-info,.wait-success,.new-app-success{
+
+    width: 350px;
+
+    margin: 0 auto;
+
+    margin-top: 20px;
+
+    padding-left: 15px;
+
+}
+
+
+
+.poll-options{
+
+    padding-left:15px;
+
+    list-style:none;
+
+}
+
+.poll-options li{
+
+    padding-bottom:10px;
+
+
+
+}
+
+.form-group.required .control-label:after { 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 8px;
+    top:0px;
+}
+
+.pass_options{
+    display:none;
+}
+
+.footer{
+    background: #009933;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.footer a{
+    color: #fff;
+    font-weight: bold;
+}

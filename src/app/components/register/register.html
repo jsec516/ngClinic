@@ -1,0 +1,39 @@
+<div id="glab-register" data-title="Register to be a member of anantahealth">
+    <form role="form" method="post" data-update="#regSuccess" action="submitRegister" class="glab-login-form glab-form">
+
+        <div class="form-group required">
+            <label for="fName" class="col-md-8 control-label">First Name</label>
+            <input type="text" class="form-control" id="fName" name="fName" required="required" placeholder="First Name">
+        </div>
+
+        <div class="form-group required">
+            <label for="lName" class="col-md-8 control-label">Last Name</label>
+            <input type="text" class="form-control" id="lName" name="lName" required="required" placeholder="Last Name">
+        </div>
+
+        <div class="form-group required">
+            <label for="email" class="col-md-8 control-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required="required" placeholder="Email">
+        </div>
+
+        <div class="form-group required">
+            <label for="passwd" class="col-md-8 control-label">Password</label>
+            <input type="password" class="form-control" id="passwd" name="passwd" required="required" placeholder="Password">
+        </div>
+
+        <div class="form-group required">
+            <label for="rPasswd" class="col-md-8 control-label">Retype Password</label>
+            <input type="password" class="form-control" id="rPasswd" name="rPasswd" required="required" placeholder="Retype Password">
+        </div>
+
+        <div class="form-group required">
+            <label for="phone" class="col-md-8 control-label">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" required="required" placeholder="phone number">
+        </div>
+
+        <button type="submit" class="btn btn-default glab-btn">Submit</button>
+        <div class="form-group account-options">
+            <a href="#" class="login-btn" [routerLink]="['Login']" >Back to <strong>login</strong>?</a>
+        </div>
+    </form>
+</div>

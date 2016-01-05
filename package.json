@@ -1,39 +1,52 @@
 {
-  "name": "ngClinic",
-  "version": "0.0.1",
-  "description": "Angular 2 Server side rendering",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jsec516/ngClinic.git"
-  },
+  "name": "angular2-bootstrap4-oauth2-ohmy",
+  "version": "1.0.2",
+  "description": "A skeleton Angular2, Bootstrap 4, OAuth2 application using webpack (oh my!)",
+  "author": "Michael Oryl",
   "scripts": {
-    "test": "node_modules/.bin/mocha --no-exit tests",
-    "start": "node server/server.js"
+    "start": "webpack-dev-server --progress --colors --content-base src --port 3000 --display-cached --display-error-details --inline"
   },
-  "license": "Apache-2.0",
-  "contributors": [
-    "Jahidul Islam <exporter2022@gmail.com>"
-  ],
   "dependencies": {
-    "angular2": "^2.0.0-beta.0",
-    "angular2-universal-preview": "^0.6.1",
-    "bootstrap": "^3.3.6",
-    "css": "^2.2.1",
+    "angular2": "2.0.0-beta.0",
+    "bootstrap": "4.0.0-alpha.2",
     "es6-promise": "^3.0.2",
-    "es6-shim": "^0.34.0",
-    "express": "^4.13.3",
-    "lodash": "^3.10.1",
-    "parse5": "^2.0.2",
-    "preboot": "^1.0.2",
+    "es6-shim": "^0.33.13",
+    "jquery": "^2.1.4",
+    "js-cookie": "^2.1.0",
     "reflect-metadata": "^0.1.2",
+    "require": "^2.4.20",
     "rxjs": "^5.0.0-beta.0",
-    "systemjs": "^0.19.9",
-    "zone.js": "^0.5.10"
+    "traceur": "0.0.93",
+    "zone.js": "^0.5.8",
+    "tether": "~1.1.1"
   },
   "devDependencies": {
-    "expect": "^1.13.4",
-    "mocha": "^2.3.4",
-    "supertest": "^1.1.0"
+    "css-loader": "^0.23.1",
+    "del": "^2.0.2",
+    "express": "^4.13.3",
+    "grunt": "^0.4.5",
+    "grunt-bump": "^0.7.0",
+    "grunt-contrib-compress": "^0.14.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-grunt": "^0.2.4",
+    "grunt-shell": "^1.1.2",
+    "grunt-string-replace": "^1.2.1",
+    "grunt-xmlpoke": "^0.8.0",
+    "imports-loader": "^0.6.5",
+    "livereload": "^0.4.0",
+    "load-grunt-tasks": "^3.4.0",
+    "style-loader": "^0.13.0",
+    "systemjs": "^0.19.8",
+    "ts-loader": "^0.7.2",
+    "tsd": "^0.6.5",
+    "typescript": "^1.7.5",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+    "html-loader": "~0.4.0",
+    "less": "~2.5.3",
+    "less-loader": "~2.2.2",
+    "file-loader": "~0.8.5",
+    "url-loader": "~0.5.7"
   }
 }

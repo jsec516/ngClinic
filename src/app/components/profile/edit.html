@@ -1,0 +1,99 @@
+<div id="glab-edit-profile" data-title="Please Login First To Book Appointment">
+    <form role="form" method="post" action="updateProfile" data-update="#glab-edit-status" class="glab-edit-profile-form glab-form">
+
+        <div class="form-group">
+            <label for="editFirstName">First Name</label>
+            <input type="text" required id="editFirstName" class="form-control" name="editFirstName" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editLastName">Last Name</label>
+            <input type="text" required id="editLastName" class="form-control" name="editLastName" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editEmail">E-mail</label>
+            <input type="text" disabled="disabled" id="editEmail" class="form-control" name="editEmail" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="pass_option">Password</label>
+            <a href="#" id="pass_option" name="pass_option">change password?</a>
+        </div>
+
+        <div class="form-group pass_options">
+            <label for="new_password">New Password (Leave blank, if you don't want to change)</label>
+            <input type="password" id="new_password" class="form-control" name="new_password" />
+        </div>
+
+        <div class="form-group pass_options">
+            <label for="re_password">Retype Password (Type your new password again)</label>
+            <input type="password" id="re_password" class="form-control" name="re_password" />
+        </div>
+
+        <div class="form-group">
+            <label for="editPhone">Phone</label>
+            <input type="text" required id="editPhone" class="form-control" name="editPhone" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editPrimary1">Primary Doctor</label>
+            <select name="editPrimary1" id="editPrimary1" class="form-control">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="editStreet">Street</label>
+            <input type="text" id="editStreet" class="form-control" name="editStreet" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editCity">City</label>
+            <input type="text" id="editCity" class="form-control" name="editCity" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editPostal">Postal Code</label>
+            <input type="text" id="editPostal" class="form-control" name="editPostal" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editProvince">Province</label>
+            <input type="text" id="editProvince" class="form-control" name="editProvince" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editContact">Contact Me</label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input id="editContact1" name="editContact" type="radio" value="1"> Email
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input id="editContact2" name="editContact" type="radio" value="2"> Phone
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input id="editContact3" name="editContact" type="radio" value="3"> Both
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="editAddress1">Address1</label>
+            <input type="text" id="editAddress1" class="form-control" name="editAddress1" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="editAddress2">Address2</label>
+            <input type="text" id="editAddress2" class="form-control" name="editAddress2" value="" />
+        </div>
+
+        <button type="submit" class="btn btn-default glab-btn" style="">Submit</button>
+    </form>
+</div>

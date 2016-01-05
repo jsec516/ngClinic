@@ -1,0 +1,21 @@
+<div id="glab-login" data-title="Please Login First To Book Appointment">
+    <form role="form" action="login" (submit)="doLogin()" data-redirect="" method="post" class="glab-login-form glab-form">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-default glab-btn">Submit</button>
+
+        <div class="form-group account-options">
+            <a href="#" class="forgot-btn" [routerLink]="['Forgot']">Forgot <strong>Password</strong>?</a>
+            <br/>
+            <a href="#" class="register-btn" [routerLink]="['Register']">Create <strong>Account</strong>?</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+<div id="glab-new-appt" data-title="Make an appointment">
+    <form role="form" method="post" action="submitApp" data-update="#glab-main-container" class="glab-new-form glab-form">
+
+        <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" class="form-control glab-info-change" data-url="loadPractitioner" data-target="#practitioner" name="services">
+                <option>Select Service</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="practitioner">Practitioner</label>
+            <select id="practitioner" class="form-control" name="practitioners">
+                <option>Select Pracitioner</option>
+            </select>
+        </div>
+
+        <div class="form-group app-date-container">
+            <label for="app_date">Appointment Date:</label>
+            <input type="text" data-provide="datepicker" class="form-control glab-info-change datepicker" id="app_date" name="app_date"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="app_time">Time:</label>
+            <select id="app_time" class="form-control" name="app_time">
+                <option>--Select Slot--</option>
+                <option>10:00 AM</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="app_reminder">Reminder Type:</label>
+            <select id="app_reminder" class="form-control" name="app_reminder">
+                <option value="1">Email</option>
+                <option value="2">Phone</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pt_comments">Add Comment:</label>
+            <textarea class="form-control" id="pt_comments" name="pt_comments"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-default glab-btn">Submit</button>
+
+        <div class="form-group account-options">
+            <a href="#" class="wait-btn">or Request an <strong>waiting appointment</strong></a>
+            <a href="#" class="new-btn">or Create an <strong> appointment</strong></a>
+        </div>
+    </form>
+</div>
