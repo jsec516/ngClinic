@@ -11,14 +11,17 @@ import {AuthService} from '../../services/auth.service';
 })
 
 export class Login{
-    
+    user: string = "";
+    password: string = "";
+  
     constructor(
 		private _router: Router,
 		private authService: AuthService
 	){}
     
     doLogin(){
-        this.authService.doLogin();
-        this._router.navigate(['Dashboard']);
+        console.log('calling auth service');
+        this.authService.doLogin(this.user, this.password);
+        // this._router.navigate(['Dashboard']);
     }
 }

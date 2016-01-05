@@ -18,7 +18,8 @@
     "rxjs": "^5.0.0-beta.0",
     "traceur": "0.0.93",
     "zone.js": "^0.5.8",
-    "tether": "~1.1.1"
+    "tether": "~1.1.1",
+    "cors": "~2.7.1"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",

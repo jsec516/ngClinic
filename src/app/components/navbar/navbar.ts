@@ -20,4 +20,8 @@ export class NavBar{
     get authenticated() {
         return this.authService.isAuthenticated();
     }
+    
+    doLogout(){
+        this.authService.doLogout();
+    }
 }

@@ -21,12 +21,13 @@ import {Loggedout} from './components/loggedout/loggedout';
 import {AppService} from './services/app.service';
 import {AuthService} from './services/auth.service';
 import {WindowService} from './services/window.service';
+import {CookieService} from './services/cookie.service';
 import {NavBar} from './components/navbar/navbar';
 
 @Component({
     selector: 'app',
     directives: [NavBar, RouterOutlet, ROUTER_DIRECTIVES],
-    viewProviders: [AuthService, AppService],
+    viewProviders: [AuthService, AppService, CookieService],
     // providers: [AppService],
     template: require('./app.html')
 })
