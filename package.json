@@ -19,7 +19,14 @@
     "traceur": "0.0.93",
     "zone.js": "^0.5.8",
     "tether": "~1.1.1",
-    "cors": "~2.7.1"
+    "cors": "~2.7.1",
+    "mongoose-timestamp": "~0.4.0",
+    "mongoose": "~4.3.4",
+    "middleware-responder": "~1.0.0",
+    "body-parser": "~1.14.2",
+    "jsonwebtoken": "~5.5.4",
+    "bcrypt": "~0.8.5",
+    "express-validator": "~2.18.0"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",

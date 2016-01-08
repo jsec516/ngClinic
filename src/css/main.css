@@ -138,11 +138,9 @@
 
 }
 
-.alert-success{
+.alert-success, .alert-danger{
 
     margin-top:30px;
-
-    display:none;
 
 }
 
@@ -235,4 +233,12 @@
 .footer a{
     color: #fff;
     font-weight: bold;
+}
+
+.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
 }

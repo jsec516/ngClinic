@@ -1,31 +1,19 @@
-var express = require('express'),
-    cors = require('cors');
+/// <reference path="./typings/tsd.d.ts" />
+// Use strict mode to enable ES6 : class, etc ...
+'use strict';
 
-var app = express();
+// require(__base + 'router/public')
+global.__appRoot = __dirname + '/';
+// Prepare server environment
+//==============================================================================
+var app = require("./server/app").app();
 
-// enable cors
-app.use(cors());
+// START THE SERVER
+// =============================================================================
 
-// serve static files
-app.use('/node_modules', express.static(__dirname + '/node_modules'));
-app.use('/__build__', express.static(__dirname + '/__build__'));
-app.use('/', express.static(__dirname + '/src'));
+// set our port in the PORT environment variable
+var port = process.env.PORT || 8000;
 
-// handle jwt request
-app.post('/jwt', function(req, res){
-    res.json({'success': true});
-    res.end();
-})
-
-// handle other api request
-app.use('/api', function(req, res){
-    res.json({'success': true});
-    res.end();
-})
-
-/* If using HTML5 style URLs in the client app, you'll need dummy URL support here for your routes */
-//app.use('/public', express.static(__dirname + '/src'));
-//app.use('/protected', express.static(__dirname + '/src'));
-
-app.listen(8000);
-console.log('Listening on port 8000.');
+app.listen(port);
+console.log(new Date());
+console.log('Waiting for connection on port ' + port);
