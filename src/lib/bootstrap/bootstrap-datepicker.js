@@ -1,3 +1,4 @@
+/* global jQuery */
 /* =========================================================
  * bootstrap-datepicker.js
  * Repo: https://github.com/eternicode/bootstrap-datepicker/
@@ -1668,4 +1669,4 @@
 		$('[data-provide="datepicker-inline"]').datepicker();
 	});
 
-}(window.jQuery));
+}(jQuery));

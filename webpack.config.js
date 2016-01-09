@@ -68,7 +68,7 @@ module.exports = {
         new CommonsChunkPlugin({name: 'common', filename: 'common.js', minChunks: 2, chunks: ['app', 'vendor']}),
         new ProvidePlugin({
             $: "jquery",
-            jQuery: "jquery",
+            // jQuery: "jquery",
             Cookies: "js-cookie"
         })
 //        new UglifyJsPlugin() // use for production
