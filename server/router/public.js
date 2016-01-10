@@ -9,7 +9,6 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var auth = require(__base + 'controller/auth');
 var setRender = require('middleware-responder').setRender;
 var setRedirect = require('middleware-responder').setRedirect;
 

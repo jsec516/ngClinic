@@ -28,6 +28,13 @@ router.get('/dashboard', function (req, res) {
     res.send('protected area');
 });
 
+// appointment routes api/appt/***
+var appt = require(__base + 'lib/appt').router();
+router.use('/appt', appt);
+
+// profile routes api/profile/***
+var profile = require(__base + 'lib/profile').router();
+router.use(profile);
 //============================EXPORTS====================================
 
 // Provides the api routers

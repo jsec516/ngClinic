@@ -26,7 +26,8 @@ app.use('/__build__', express.static(__appRoot + '/__build__'));
 app.use('/', express.static(__appRoot + '/src'));
 
 // MIDDLEWARES
-app.use(expressValidator());
+var validatorObj = require(__base + "lib/validator");
+app.use(expressValidator({customValidators: validatorObj.validators}));
 
 // enable cors
 app.use(cors());

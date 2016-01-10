@@ -18,6 +18,7 @@ export class AuthService {
 
     constructor(private router: Router, private cookies: CookieService, private http: Http) {
         console.log("called auth service with " + this.authenticated);
+        this.jwt = this.getToken();
     }
 
     // Login and save the returned jason-web-token
@@ -90,6 +91,10 @@ export class AuthService {
     }
 
     public isAuthenticated() {
+        return this.cookies.getCookie(this.tokenCookieName);
+    }
+    
+    public getToken(){
         return this.cookies.getCookie(this.tokenCookieName);
     }
 }

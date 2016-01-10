@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 
 // load form related functionality
@@ -14,7 +14,7 @@ import {AuthService} from '../../services/auth.service';
     // providers: [AuthService]
 })
 
-export class Login {
+export class Login  implements OnInit {
     user: string = "";
     password: string = "";
     model: LoginForm;
@@ -50,4 +50,10 @@ export class Login {
     //     this.authService.doLogin(this.user, this.password);
     //     // this._router.navigate(['Dashboard']);
     // }
+    
+    ngOnInit() {
+        if (this.authService.isAuthenticated()) {
+            this._router.navigate(['Dashboard']);
+        }
+    }
 }

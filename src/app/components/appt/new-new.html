@@ -2,7 +2,7 @@
     <div  [hidden]="!_apptService.successMsg" class="alert alert-success"  role="alert">{{_apptService.successMsg}}</div>
     <div  [hidden]="!_apptService.errorMsg" class="alert alert-danger"  role="alert">{{_apptService.errorMsg}}</div>
     
-    <form [hidden]="_apptService.successMsg" [ngFormModel]="apptForm" #f="ngForm" (ngSubmit)="doAppointment()" role="form" method="post" action="submitApp" data-update="#glab-main-container" class="glab-new-form glab-form">
+    <form *ngIf="!_apptService.successMsg" [ngFormModel]="apptForm" #f="ngForm" (ngSubmit)="doAppointment()" role="form" method="post" action="submitApp" data-update="#glab-main-container" class="glab-new-form glab-form">
         
         <div class="form-group">
             <label for="service">Service</label>

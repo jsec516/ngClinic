@@ -1,9 +1,8 @@
 <div id="glab-new-appt" data-title="Make an appointment">
     <div  [hidden]="!_apptService.successMsg" class="alert alert-success"  role="alert">{{_apptService.successMsg}}</div>
     <div  [hidden]="!_apptService.errorMsg" class="alert alert-danger"  role="alert">{{_apptService.errorMsg}}</div>
-    
-    <form [hidden]="_apptService.successMsg" [ngFormModel]="apptForm" #f="ngForm" (ngSubmit)="doAppointment()" role="form" method="post" action="submitApp" data-update="#glab-main-container" class="glab-new-form glab-form">
-        
+    <form  [hidden]="_apptService.successMsg" [ngFormModel]="apptForm" (ngSubmit)="doAppointment()" #f="ngForm" role="form" method="post" action="submitApp" data-update="#glab-main-container" class="glab-new-form glab-form">
+
         <div class="form-group">
             <label for="service">Service</label>
             <select ngControl="service" (change)="changePractitioners($event)" required id="service" class="form-control" name="services" placeholder="Select Service">
@@ -23,7 +22,7 @@
 
         <div class="form-group app-date-container">
             <label for="app_date">Appointment Date:</label>
-            <input #date ngControl="date" required   placeholder="Select Date" type="text" class="form-control datepicker" name="app_date" id="app_date" />
+            <input #date ngControl="date" required  placeholder="Select Date" type="text" class="form-control datepicker" id="app_date" />
         </div>
 
         <div class="form-group">

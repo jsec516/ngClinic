@@ -10,21 +10,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="#appt of _historyService.appointments" >
                 <td>
-                    Acupuncture
+                    {{appt.service}}
                 </td>
                 <td>
-                    Rebecca Risk
+                    {{appt.practitioner}}
                 </td>
                 <td>
-                    12-12-2016
+                    {{appt.date}}
                 </td>
                 <td>
-                    12:30pm
+                    {{appt.time}}
                 </td>
                 <td>
-                    <a class="cancel-appt-btn" href="#">Cancel</a>
+                    <a *ngIf="appt.status==='upcoming'" class="cancel-appt-btn" href="#">Cancel</a>
+                    <span *ngIf="appt.status==='expired'" >N/A</span>
                 </td>
             </tr>
         </tbody>

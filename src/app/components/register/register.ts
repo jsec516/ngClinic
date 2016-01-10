@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router} from "angular2/router";
 
 // load form related functionality
@@ -15,7 +15,7 @@ import {AuthService} from '../../services/auth.service';
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES]
 })
 
-export class Register {
+export class Register implements OnInit{
     
     // for related variables
     // payLoad = null;
@@ -57,5 +57,11 @@ export class Register {
     doRegister() {
         // this.payLoad = JSON.stringify(this.registerForm.errors);
         this.authService.doRegister(this.registerForm.value);
+    }
+    
+    ngOnInit() {
+        if (this.authService.isAuthenticated()) {
+            this._router.navigate(['Dashboard']);
+        }
     }
 }

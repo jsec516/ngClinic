@@ -235,6 +235,9 @@
     font-weight: bold;
 }
 
+.form-control.datepicker{
+    padding: 6px 12px;
+}
 .ng-valid[required] {
   border-left: 5px solid #42A948; /* green */
 }

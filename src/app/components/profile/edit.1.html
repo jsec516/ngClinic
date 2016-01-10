@@ -1,0 +1,13 @@
+<div id="glab-edit-profile" data-title="Please Login First To Book Appointment">
+    <form role="form" #f="ngForm" method="post" action="updateProfile" data-update="#glab-edit-status" class="glab-edit-profile-form glab-form">
+
+        <div class="form-group">
+            <label for="editFirstName">First Name</label>
+            <input type="text" required id="editFirstName" class="form-control" [(ngModel)]="model.firstName" />
+        </div>
+
+       
+
+        <button type="submit" class="btn btn-default glab-btn" style="">Submit</button>
+    </form>
+</div>
