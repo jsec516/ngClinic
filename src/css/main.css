@@ -54,15 +54,20 @@
 
     margin-top:50px;
 
+    
 }
 
-.glab-login-form label{
-
+.glab-form label{
+    /* later added from glab-login-form label */
     text-transform:uppercase;
     padding-left: 0px;
-
-
 }
+/*.glab-login-form label{
+
+    
+
+
+}*/
 
 .btn.glab-btn{
 

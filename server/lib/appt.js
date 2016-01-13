@@ -32,9 +32,11 @@ function saveAppt(req, res, done) {
         var tasks = {
             // fetch service record
             service: function (callback) {
+                console.log('service callback calling');
                 Service.findOne({
-                    _id: req.body.service
+                    name: req.body.service
                 }, function(err, service){
+                    console.log('service processing finished');
                     if(err) { return callback(err); }
                     callback(null, 1);    
                 });
@@ -43,7 +45,7 @@ function saveAppt(req, res, done) {
             // fetch practitioner record
             pracitioner: function (callback) {
                 Practitioner.findOne({
-                    _id: req.body.practitioner
+                    firstName: 'tada'
                 }, function(err, practitioner){
                     if(err) { return callback(err); }
                     callback(null, 2);    
@@ -57,13 +59,15 @@ function saveAppt(req, res, done) {
         // call done method with success method if everything ok
         // call done with error if something wrong
         var callback = function (err, results) {
+            if(err) { return done(err); }
+            console.log('final result is : ', results);
+            // console.log(results);
             return done(null, 'Appointment created successfully');
         };
         
         // save appointment
         async.series(tasks, callback);
 
-        
     }
 
     process.nextTick(doSave);
@@ -83,8 +87,8 @@ router.use(bodyParser.json());
 // Register user, send success message,
 // or error message if registration failed
 router.post('/save', function (req, res) {
-    console.log('head ', req.head);
-    console.log('body ', req.body);
+    // console.log('head ', req.head);
+    // console.log('body ', req.body);
     // TODO need to change with configuration 
     saveAppt(req, res, function (err, message) {
         var result;

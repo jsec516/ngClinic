@@ -9,6 +9,7 @@ import 'angular2/core';
 import 'angular2/http';
 import 'angular2/router';
 import 'moment';
+import 'gsap';
 
 // FOR WHATEVER REASON, THIS MUST COME AFTER THE ANGULAR2-POLYFILLS IMPORT
 require('./lib/bootstrap/jquery-1.11.3.min.js')

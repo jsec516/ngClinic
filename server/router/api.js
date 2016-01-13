@@ -35,6 +35,11 @@ router.use('/appt', appt);
 // profile routes api/profile/***
 var profile = require(__base + 'lib/profile').router();
 router.use(profile);
+
+// practitioner routes
+var pracs = require(__base + 'lib/prac').router();
+router.use('/practitioners', pracs);
+
 //============================EXPORTS====================================
 
 // Provides the api routers

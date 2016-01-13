@@ -1,11 +1,15 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, Router, OnActivate, OnDeactivate, ComponentInstruction} from 'angular2/router';
 
 // load form related functionality
 import {FormBuilder, Validators, Control, ControlGroup, FORM_DIRECTIVES}    from 'angular2/common';
 
 import {LoginForm} from '../../forms/login.form';
 import {AuthService} from '../../services/auth.service';
+// import * as TweenMax from 'gsap';
+// load tweenmax
+declare var gsap: any;
+declare var $: any;
 
 @Component({
     selector: 'login',
@@ -14,7 +18,7 @@ import {AuthService} from '../../services/auth.service';
     // providers: [AuthService]
 })
 
-export class Login  implements OnInit {
+export class Login implements OnInit, OnActivate, OnDeactivate {
     user: string = "";
     password: string = "";
     model: LoginForm;
@@ -53,7 +57,26 @@ export class Login  implements OnInit {
     
     ngOnInit() {
         if (this.authService.isAuthenticated()) {
-            this._router.navigate(['Dashboard']);
+            return this._router.navigate(['Dashboard']);
         }
     }
+
+    routerOnActivate(next: ComponentInstruction, prev: ComponentInstruction) {
+        if (!this.authService.isAuthenticated()) {
+            console.log("Login Page - initialized");
+            gsap.fromTo($(".glab-login-form"), .3, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1 });
+            // return Rx.Observable.of(true).delay(1000).toPromise();
+            return new Promise((res, rej) => setTimeout(() => res(1), 300));
+        }
+    }
+
+    routerOnDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
+        if (!this.authService.isAuthenticated()) {
+            console.log("Login Page - destroyed");
+            gsap.fromTo($(".glab-login-form"), .1, { scale: 1, opacity: 1 }, { scale: 0.3, opacity: 0 });
+            // return Rx.Observable.of(true).delay(1000).toPromise();
+            return new Promise((res, rej) => setTimeout(() => res(1), 100));
+        }
+    }
+
 }

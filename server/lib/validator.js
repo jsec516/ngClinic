@@ -1,6 +1,6 @@
 
 var validService = function(value){
-    console.log("service is ", value);
+    // console.log("service is ", value);
     return true;
 }
 

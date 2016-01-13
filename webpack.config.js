@@ -70,7 +70,8 @@ module.exports = {
             $: "jquery",
             // jQuery: "jquery",
             Cookies: "js-cookie",
-            moment_: 'moment'
+            moment_: 'moment',
+            gsap: 'gsap'
         })
 //        new UglifyJsPlugin() // use for production
     ],

@@ -2,7 +2,7 @@
     <div  [hidden]="!authService.successMsg" class="alert alert-success"  role="alert">{{authService.successMsg}}</div>
     <div  [hidden]="!authService.registerError" class="alert alert-danger"  role="alert">{{authService.registerError}}</div>
     
-    <form role="form" *ngIf="!authService.successMsg" (ngSubmit)="doRegister()" [ngFormModel]="registerForm" #f="ngForm" method="post" data-update="#regSuccess" action="submitRegister" class="glab-login-form glab-form">
+    <form role="form" *ngIf="!authService.successMsg" (ngSubmit)="doRegister()" [ngFormModel]="registerForm" #f="ngForm" method="post" data-update="#regSuccess" action="submitRegister" class="glab-register-form glab-form">
 
         <div class="form-group required">
             <label for="fName" class="col-md-8 control-label">First Name</label>

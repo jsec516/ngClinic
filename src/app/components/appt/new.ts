@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES, Router, Location} from 'angular2/router';
+import {ROUTER_DIRECTIVES, Router, Location, OnActivate, OnDeactivate, ComponentInstruction} from 'angular2/router';
 
 // load form related functionality
 import {FormBuilder, Validators, Control, ControlGroup, FORM_DIRECTIVES, AbstractControl}    from 'angular2/common';
@@ -7,6 +7,9 @@ import {FormBuilder, Validators, Control, ControlGroup, FORM_DIRECTIVES, Abstrac
 import {AuthService} from '../../services/auth.service';
 import {AppointmentService} from '../../services/appointment.service';
 
+// import * as TweenMax from 'gsap';
+// load tweenmax
+declare var gsap: any;
 declare var $: any;
 
 @Component({
@@ -16,7 +19,7 @@ declare var $: any;
     providers: [AppointmentService]
 })
 
-export class NewAppt implements OnInit {
+export class NewAppt implements OnInit, OnActivate, OnDeactivate {
     elementRef: ElementRef;
     apptForm: ControlGroup;
     // counter: number = 0;
@@ -58,6 +61,23 @@ export class NewAppt implements OnInit {
                 console.log("date changed");
                 (<Control>this.apptForm.controls['date']).updateValue(e.format('mm/dd/yyyy'));
             });
+    }
+    
+    routerOnActivate(next: ComponentInstruction, prev: ComponentInstruction) {
+        console.log("NewAppt Page - initialized");
+
+        gsap.fromTo($(".glab-new-form"), .3, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1 });
+
+        // return Rx.Observable.of(true).delay(1000).toPromise();
+        return new Promise((res, rej) => setTimeout(() => res(1), 300));
+    }
+
+    routerOnDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
+        console.log("NewAppt Page - destroyed");
+        gsap.fromTo($(".glab-new-form"), .1, { scale: 1, opacity: 1 }, { scale: 0.3, opacity: 0 });
+
+        // return Rx.Observable.of(true).delay(1000).toPromise();
+        return new Promise((res, rej) => setTimeout(() => res(1), 100));
     }
 
     changePractitioners($event) {

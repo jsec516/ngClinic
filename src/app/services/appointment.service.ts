@@ -23,13 +23,25 @@ export class AppointmentService {
 
     fetchPractitioners(service: number) {
         this.loading = 'practitioners';
-        setTimeout(
-            () => {
-                this.practitioners = [{ name: 'Kevin fojfer', id: 1 }, { id: 2, name: 'Rebecca Risk' }];
-                this.loading = '';        
-            },
-            1000
-        )
+         let options = { "headers": new Headers({ 
+            "Authorization": "Bearer " + this._auth.getToken(),
+            "Content-Type": "application/json"  
+        }) };
+        
+        // this.practitioners = [{ name: 'Kevin fojfer', id: 1 }, { id: 2, name: 'Rebecca Risk' }];
+        this.http.get("http://localhost:8000/api/practitioners", options)
+        .subscribe((rep, err) => {
+                if (err) {
+                    console.log("Error : ", err);
+                    throw err;
+                }
+                console.log("Answer is : ", rep);
+                var response = rep.json();
+                if (response.success) {
+                    this.practitioners = response.message;
+                }
+                this.loading = '';  
+            });
         
     }
 

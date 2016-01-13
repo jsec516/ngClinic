@@ -13,14 +13,14 @@ var timestamp = require('mongoose-timestamp');
 var practitionerSchema = new Schema({
     firstName: String,
     lastName: String,
-    email: String,
-    services: [
+    email: String
+    /*services: [
         {
             _id:Schema.Types.ObjectId,
             name: String 
         }
     ],
-    _clinicId: Schema.Types.ObjectId
+    _clinicId: Schema.Types.ObjectId*/
 });
 
 // add createdAt/updatedAt field

@@ -16,7 +16,7 @@
             <label for="practitioner">Practitioner</label>
             <select ngControl="practitioner" id="practitioner" required  class="form-control" name="practitioners">
                 <option value="" disabled selected>Select Pracitioner</option>
-                <option *ngFor="#p of _apptService.practitioners" [value]="p.id">{{ p.name }}</option>
+                <option *ngFor="#p of _apptService.practitioners" [value]="p._id">{{ p.firstName + ' ' + p.lastName }}</option>
             </select>
             <span *ngIf="_apptService.loading==='practitioners'">loading....</span>
         </div>
