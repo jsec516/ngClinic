@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 command: 'webpack --config webpack.config.js',
             },
             webpackProd: {
-                command: 'webpack --config webpack.prod.config.js'
+                command: 'webpack --config webpack.prod.config.js --profile --json >> stats.json'
             }
         },
         copy: {
