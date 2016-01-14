@@ -69,7 +69,8 @@ module.exports = {
         new ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
-            Cookies: "js-cookie"
+            Cookies: "js-cookie",
+            gsap: 'gsap'
         }),
         // new UglifyJsPlugin() // use for production
     ],
