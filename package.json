@@ -1,5 +1,5 @@
 {
-  "name": "angular2-bootstrap4-oauth2-ohmy",
+  "name": "ngClinic",
   "version": "1.0.2",
   "description": "A skeleton Angular2, Bootstrap 4, OAuth2 application using webpack (oh my!)",
   "author": "Michael Oryl",
@@ -30,7 +30,8 @@
     "express-validator": "~2.18.0",
     "moment": "~2.11.1",
     "async": "~1.5.2",
-    "gsap": "~1.18.2"
+    "gsap": "~1.18.2",
+    "forever": "~0.15.1"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",
