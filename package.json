@@ -27,6 +27,7 @@
     "body-parser": "~1.14.2",
     "jsonwebtoken": "~5.5.4",
     "bcrypt": "~0.8.5",
+    "express": "^4.13.3",
     "express-validator": "~2.18.0",
     "moment": "~2.11.1",
     "async": "~1.5.2",
@@ -36,7 +37,6 @@
   "devDependencies": {
     "css-loader": "^0.23.1",
     "del": "^2.0.2",
-    "express": "^4.13.3",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.7.0",
     "grunt-contrib-compress": "^0.14.0",
