@@ -3,7 +3,7 @@ require('es6-promise').polyfill()
 var webpack = require('webpack');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var ProvidePlugin = webpack.ProvidePlugin;
-// var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
     devtool: 'source-map',
@@ -72,7 +72,7 @@ module.exports = {
             Cookies: "js-cookie",
             gsap: 'gsap'
         }),
-        // new UglifyJsPlugin() // use for production
+        new UglifyJsPlugin() // use for production
     ],
 
     // Other module loader config
