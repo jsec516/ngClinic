@@ -21,18 +21,18 @@ webpackJsonp([0],{
 	var browser_1 = __webpack_require__(/*! angular2/platform/browser */ 227);
 	var common_1 = __webpack_require__(/*! angular2/common */ 230);
 	var register_1 = __webpack_require__(/*! ./components/register/register */ 331);
-	var login_1 = __webpack_require__(/*! ./components/login/login */ 339);
-	var forgot_1 = __webpack_require__(/*! ./components/forgot/forgot */ 342);
-	var new_1 = __webpack_require__(/*! ./components/appt/new */ 344);
-	var new_2 = __webpack_require__(/*! ./components/wait/new */ 347);
-	var history_1 = __webpack_require__(/*! ./components/appt/history */ 349);
-	var edit_1 = __webpack_require__(/*! ./components/profile/edit */ 352);
-	var loggedout_1 = __webpack_require__(/*! ./components/loggedout/loggedout */ 356);
-	var app_service_1 = __webpack_require__(/*! ./services/app.service */ 358);
-	var auth_service_1 = __webpack_require__(/*! ./services/auth.service */ 335);
-	var window_service_1 = __webpack_require__(/*! ./services/window.service */ 359);
-	var cookie_service_1 = __webpack_require__(/*! ./services/cookie.service */ 336);
-	var navbar_1 = __webpack_require__(/*! ./components/navbar/navbar */ 360);
+	var login_1 = __webpack_require__(/*! ./components/login/login */ 341);
+	var forgot_1 = __webpack_require__(/*! ./components/forgot/forgot */ 344);
+	var new_1 = __webpack_require__(/*! ./components/appt/new */ 346);
+	var new_2 = __webpack_require__(/*! ./components/wait/new */ 349);
+	var history_1 = __webpack_require__(/*! ./components/appt/history */ 351);
+	var edit_1 = __webpack_require__(/*! ./components/profile/edit */ 354);
+	var loggedout_1 = __webpack_require__(/*! ./components/loggedout/loggedout */ 358);
+	var app_service_1 = __webpack_require__(/*! ./services/app.service */ 360);
+	var auth_service_1 = __webpack_require__(/*! ./services/auth.service */ 337);
+	var window_service_1 = __webpack_require__(/*! ./services/window.service */ 361);
+	var cookie_service_1 = __webpack_require__(/*! ./services/cookie.service */ 338);
+	var navbar_1 = __webpack_require__(/*! ./components/navbar/navbar */ 362);
 	var App = (function () {
 	    function App(appService) {
 	        this.appService = appService;
@@ -42,7 +42,7 @@ webpackJsonp([0],{
 	            selector: 'app',
 	            directives: [navbar_1.NavBar, router_1.RouterOutlet, router_1.ROUTER_DIRECTIVES],
 	            viewProviders: [auth_service_1.AuthService, app_service_1.AppService, cookie_service_1.CookieService],
-	            template: __webpack_require__(/*! ./app.html */ 362)
+	            template: __webpack_require__(/*! ./app.html */ 364)
 	        }),
 	        router_1.RouteConfig([
 	            { path: '/', name: 'Default', component: login_1.Login },
@@ -72,7 +72,7 @@ webpackJsonp([0],{
   \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	/* WEBPACK VAR INJECTION */(function(gsap, $) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -84,9 +84,9 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
 	var common_1 = __webpack_require__(/*! angular2/common */ 230);
-	var email_validator_ts_1 = __webpack_require__(/*! ../../validators/email.validator.ts */ 333);
-	var password_validator_ts_1 = __webpack_require__(/*! ../../validators/password.validator.ts */ 334);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var email_validator_ts_1 = __webpack_require__(/*! ../../validators/email.validator.ts */ 335);
+	var password_validator_ts_1 = __webpack_require__(/*! ../../validators/password.validator.ts */ 336);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var Register = (function () {
 	    function Register(_router, authService, fb) {
 	        this._router = _router;
@@ -137,7 +137,7 @@ webpackJsonp([0],{
 	    Register = __decorate([
 	        core_1.Component({
 	            selector: 'register',
-	            template: __webpack_require__(/*! ./register.html */ 338),
+	            template: __webpack_require__(/*! ./register.html */ 340),
 	            directives: [router_1.ROUTER_DIRECTIVES, common_1.FORM_DIRECTIVES]
 	        }), 
 	        __metadata('design:paramtypes', [router_1.Router, auth_service_1.AuthService, common_1.FormBuilder])
@@ -146,11 +146,11 @@ webpackJsonp([0],{
 	})();
 	exports.Register = Register;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 332)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! gsap */ 332), __webpack_require__(/*! jquery */ 334)))
 
 /***/ },
 
-/***/ 333:
+/***/ 335:
 /*!***********************************************!*\
   !*** ./src/app/validators/email.validator.ts ***!
   \***********************************************/
@@ -185,7 +185,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 334:
+/***/ 336:
 /*!**************************************************!*\
   !*** ./src/app/validators/password.validator.ts ***!
   \**************************************************/
@@ -216,7 +216,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 335:
+/***/ 337:
 /*!******************************************!*\
   !*** ./src/app/services/auth.service.ts ***!
   \******************************************/
@@ -232,7 +232,7 @@ webpackJsonp([0],{
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
-	var cookie_service_1 = __webpack_require__(/*! ./cookie.service */ 336);
+	var cookie_service_1 = __webpack_require__(/*! ./cookie.service */ 338);
 	var http_1 = __webpack_require__(/*! angular2/http */ 212);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
 	var AuthService = (function () {
@@ -323,7 +323,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 336:
+/***/ 338:
 /*!********************************************!*\
   !*** ./src/app/services/cookie.service.ts ***!
   \********************************************/
@@ -373,11 +373,11 @@ webpackJsonp([0],{
 	})();
 	exports.CookieService = CookieService;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! js-cookie */ 337)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! js-cookie */ 339)))
 
 /***/ },
 
-/***/ 337:
+/***/ 339:
 /*!**************************************!*\
   !*** ./~/js-cookie/src/js.cookie.js ***!
   \**************************************/
@@ -532,7 +532,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 338:
+/***/ 340:
 /*!***************************************************!*\
   !*** ./src/app/components/register/register.html ***!
   \***************************************************/
@@ -542,13 +542,13 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 339:
+/***/ 341:
 /*!*******************************************!*\
   !*** ./src/app/components/login/login.ts ***!
   \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	/* WEBPACK VAR INJECTION */(function(gsap, $) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -560,8 +560,8 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
 	var common_1 = __webpack_require__(/*! angular2/common */ 230);
-	var login_form_1 = __webpack_require__(/*! ../../forms/login.form */ 340);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var login_form_1 = __webpack_require__(/*! ../../forms/login.form */ 342);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var Login = (function () {
 	    function Login(_router, authService) {
 	        this._router = _router;
@@ -615,7 +615,7 @@ webpackJsonp([0],{
 	    Login = __decorate([
 	        core_1.Component({
 	            selector: 'login',
-	            template: __webpack_require__(/*! ./login.html */ 341),
+	            template: __webpack_require__(/*! ./login.html */ 343),
 	            directives: [router_1.ROUTER_DIRECTIVES, common_1.FORM_DIRECTIVES],
 	        }), 
 	        __metadata('design:paramtypes', [router_1.Router, auth_service_1.AuthService])
@@ -624,11 +624,11 @@ webpackJsonp([0],{
 	})();
 	exports.Login = Login;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 332)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! gsap */ 332), __webpack_require__(/*! jquery */ 334)))
 
 /***/ },
 
-/***/ 340:
+/***/ 342:
 /*!*************************************!*\
   !*** ./src/app/forms/login.form.ts ***!
   \*************************************/
@@ -646,7 +646,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 341:
+/***/ 343:
 /*!*********************************************!*\
   !*** ./src/app/components/login/login.html ***!
   \*********************************************/
@@ -656,13 +656,13 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 342:
+/***/ 344:
 /*!*********************************************!*\
   !*** ./src/app/components/forgot/forgot.ts ***!
   \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	/* WEBPACK VAR INJECTION */(function(gsap, $) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -673,7 +673,7 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var Forgot = (function () {
 	    function Forgot(_router, authService) {
 	        this._router = _router;
@@ -701,7 +701,7 @@ webpackJsonp([0],{
 	    Forgot = __decorate([
 	        core_1.Component({
 	            selector: 'forgot',
-	            template: __webpack_require__(/*! ./forgot.html */ 343),
+	            template: __webpack_require__(/*! ./forgot.html */ 345),
 	            directives: [router_1.ROUTER_DIRECTIVES]
 	        }), 
 	        __metadata('design:paramtypes', [router_1.Router, auth_service_1.AuthService])
@@ -710,11 +710,11 @@ webpackJsonp([0],{
 	})();
 	exports.Forgot = Forgot;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 332)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! gsap */ 332), __webpack_require__(/*! jquery */ 334)))
 
 /***/ },
 
-/***/ 343:
+/***/ 345:
 /*!***********************************************!*\
   !*** ./src/app/components/forgot/forgot.html ***!
   \***********************************************/
@@ -724,13 +724,13 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 344:
+/***/ 346:
 /*!****************************************!*\
   !*** ./src/app/components/appt/new.ts ***!
   \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	/* WEBPACK VAR INJECTION */(function($, gsap) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -742,8 +742,8 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
 	var common_1 = __webpack_require__(/*! angular2/common */ 230);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
-	var appointment_service_1 = __webpack_require__(/*! ../../services/appointment.service */ 345);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
+	var appointment_service_1 = __webpack_require__(/*! ../../services/appointment.service */ 347);
 	var NewAppt = (function () {
 	    function NewAppt(_router, _service, _apptService, elementRef, fb) {
 	        var _this = this;
@@ -797,7 +797,7 @@ webpackJsonp([0],{
 	    NewAppt = __decorate([
 	        core_1.Component({
 	            selector: 'new-appt',
-	            template: __webpack_require__(/*! ./new.html */ 346),
+	            template: __webpack_require__(/*! ./new.html */ 348),
 	            directives: [router_1.ROUTER_DIRECTIVES, common_1.FORM_DIRECTIVES],
 	            providers: [appointment_service_1.AppointmentService]
 	        }), 
@@ -807,11 +807,11 @@ webpackJsonp([0],{
 	})();
 	exports.NewAppt = NewAppt;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 332)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 334), __webpack_require__(/*! gsap */ 332)))
 
 /***/ },
 
-/***/ 345:
+/***/ 347:
 /*!*************************************************!*\
   !*** ./src/app/services/appointment.service.ts ***!
   \*************************************************/
@@ -829,7 +829,7 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var http_1 = __webpack_require__(/*! angular2/http */ 212);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ./auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ./auth.service */ 337);
 	var AppointmentService = (function () {
 	    function AppointmentService(router, http, _auth) {
 	        this.router = router;
@@ -899,7 +899,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 346:
+/***/ 348:
 /*!******************************************!*\
   !*** ./src/app/components/appt/new.html ***!
   \******************************************/
@@ -909,7 +909,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 347:
+/***/ 349:
 /*!****************************************!*\
   !*** ./src/app/components/wait/new.ts ***!
   \****************************************/
@@ -926,7 +926,7 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var NewWait = (function () {
 	    function NewWait(_router, _service) {
 	        this._router = _router;
@@ -937,7 +937,7 @@ webpackJsonp([0],{
 	    NewWait = __decorate([
 	        core_1.Component({
 	            selector: 'new-wait',
-	            template: __webpack_require__(/*! ./new.html */ 348),
+	            template: __webpack_require__(/*! ./new.html */ 350),
 	            directives: [router_1.ROUTER_DIRECTIVES],
 	            providers: [auth_service_1.AuthService]
 	        }), 
@@ -950,7 +950,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 348:
+/***/ 350:
 /*!******************************************!*\
   !*** ./src/app/components/wait/new.html ***!
   \******************************************/
@@ -960,13 +960,13 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 349:
+/***/ 351:
 /*!********************************************!*\
   !*** ./src/app/components/appt/history.ts ***!
   \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	/* WEBPACK VAR INJECTION */(function(gsap, $) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -977,8 +977,8 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
-	var history_service_1 = __webpack_require__(/*! ../../services/history.service */ 350);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
+	var history_service_1 = __webpack_require__(/*! ../../services/history.service */ 352);
 	var ApptHistory = (function () {
 	    function ApptHistory(_router, _service, _historyService) {
 	        this._router = _router;
@@ -1004,7 +1004,7 @@ webpackJsonp([0],{
 	    ApptHistory = __decorate([
 	        core_1.Component({
 	            selector: 'appt-history',
-	            template: __webpack_require__(/*! ./history.html */ 351),
+	            template: __webpack_require__(/*! ./history.html */ 353),
 	            directives: [router_1.ROUTER_DIRECTIVES],
 	            providers: [history_service_1.HistoryService]
 	        }), 
@@ -1014,11 +1014,11 @@ webpackJsonp([0],{
 	})();
 	exports.ApptHistory = ApptHistory;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 332)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! gsap */ 332), __webpack_require__(/*! jquery */ 334)))
 
 /***/ },
 
-/***/ 350:
+/***/ 352:
 /*!*********************************************!*\
   !*** ./src/app/services/history.service.ts ***!
   \*********************************************/
@@ -1036,7 +1036,7 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var http_1 = __webpack_require__(/*! angular2/http */ 212);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ./auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ./auth.service */ 337);
 	var HistoryService = (function () {
 	    function HistoryService(router, http, _auth) {
 	        this.router = router;
@@ -1064,7 +1064,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 351:
+/***/ 353:
 /*!**********************************************!*\
   !*** ./src/app/components/appt/history.html ***!
   \**********************************************/
@@ -1074,13 +1074,13 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 352:
+/***/ 354:
 /*!********************************************!*\
   !*** ./src/app/components/profile/edit.ts ***!
   \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	/* WEBPACK VAR INJECTION */(function(gsap, $) {var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -1092,9 +1092,9 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
 	var common_1 = __webpack_require__(/*! angular2/common */ 230);
-	var radio_value_accessor_1 = __webpack_require__(/*! ../../directives/radio_value_accessor */ 353);
-	var profile_service_1 = __webpack_require__(/*! ../../services/profile.service */ 354);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var radio_value_accessor_1 = __webpack_require__(/*! ../../directives/radio_value_accessor */ 355);
+	var profile_service_1 = __webpack_require__(/*! ../../services/profile.service */ 356);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var EditProfile = (function () {
 	    function EditProfile(_router, _service, fb, _profileService) {
 	        this._router = _router;
@@ -1141,7 +1141,7 @@ webpackJsonp([0],{
 	    EditProfile = __decorate([
 	        core_1.Component({
 	            selector: 'edit-profile',
-	            template: __webpack_require__(/*! ./edit.html */ 355),
+	            template: __webpack_require__(/*! ./edit.html */ 357),
 	            directives: [router_1.ROUTER_DIRECTIVES, common_1.FORM_DIRECTIVES, radio_value_accessor_1.RadioControlValueAccessor],
 	            providers: [profile_service_1.ProfileService]
 	        }), 
@@ -1151,11 +1151,11 @@ webpackJsonp([0],{
 	})();
 	exports.EditProfile = EditProfile;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 332)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! gsap */ 332), __webpack_require__(/*! jquery */ 334)))
 
 /***/ },
 
-/***/ 353:
+/***/ 355:
 /*!****************************************************!*\
   !*** ./src/app/directives/radio_value_accessor.ts ***!
   \****************************************************/
@@ -1201,7 +1201,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 354:
+/***/ 356:
 /*!*********************************************!*\
   !*** ./src/app/services/profile.service.ts ***!
   \*********************************************/
@@ -1219,7 +1219,7 @@ webpackJsonp([0],{
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var http_1 = __webpack_require__(/*! angular2/http */ 212);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ./auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ./auth.service */ 337);
 	var ProfileService = (function () {
 	    function ProfileService(router, http, _auth) {
 	        this.router = router;
@@ -1248,7 +1248,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 355:
+/***/ 357:
 /*!**********************************************!*\
   !*** ./src/app/components/profile/edit.html ***!
   \**********************************************/
@@ -1258,7 +1258,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 356:
+/***/ 358:
 /*!***************************************************!*\
   !*** ./src/app/components/loggedout/loggedout.ts ***!
   \***************************************************/
@@ -1275,7 +1275,7 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var Loggedout = (function () {
 	    function Loggedout(_router, _service) {
 	        this._router = _router;
@@ -1284,7 +1284,7 @@ webpackJsonp([0],{
 	    Loggedout = __decorate([
 	        core_1.Component({
 	            selector: 'logged-out',
-	            template: __webpack_require__(/*! ./loggedout.html */ 357),
+	            template: __webpack_require__(/*! ./loggedout.html */ 359),
 	            directives: [router_1.ROUTER_DIRECTIVES],
 	            providers: [auth_service_1.AuthService]
 	        }), 
@@ -1297,7 +1297,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 357:
+/***/ 359:
 /*!*****************************************************!*\
   !*** ./src/app/components/loggedout/loggedout.html ***!
   \*****************************************************/
@@ -1307,7 +1307,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 358:
+/***/ 360:
 /*!*****************************************!*\
   !*** ./src/app/services/app.service.ts ***!
   \*****************************************/
@@ -1341,7 +1341,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 359:
+/***/ 361:
 /*!********************************************!*\
   !*** ./src/app/services/window.service.ts ***!
   \********************************************/
@@ -1383,7 +1383,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 360:
+/***/ 362:
 /*!*********************************************!*\
   !*** ./src/app/components/navbar/navbar.ts ***!
   \*********************************************/
@@ -1400,7 +1400,7 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(/*! angular2/core */ 70);
 	var router_1 = __webpack_require__(/*! angular2/router */ 187);
-	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 335);
+	var auth_service_1 = __webpack_require__(/*! ../../services/auth.service */ 337);
 	var NavBar = (function () {
 	    function NavBar(router, authService) {
 	        this.router = router;
@@ -1419,7 +1419,7 @@ webpackJsonp([0],{
 	    NavBar = __decorate([
 	        core_1.Component({
 	            selector: 'navbar',
-	            template: __webpack_require__(/*! ./navbar.html */ 361),
+	            template: __webpack_require__(/*! ./navbar.html */ 363),
 	            inputs: ['nav'],
 	            directives: [router_1.ROUTER_DIRECTIVES]
 	        }), 
@@ -1432,7 +1432,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 361:
+/***/ 363:
 /*!***********************************************!*\
   !*** ./src/app/components/navbar/navbar.html ***!
   \***********************************************/
@@ -1442,7 +1442,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 362:
+/***/ 364:
 /*!**************************!*\
   !*** ./src/app/app.html ***!
   \**************************/
