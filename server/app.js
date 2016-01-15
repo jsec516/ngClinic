@@ -1,6 +1,6 @@
 /* global __appRoot */
 /* global __base */
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../typings/main.d.ts" />
 'use strict';
 /*============================================================================
                           Application setup
@@ -22,8 +22,8 @@ var db = require(__base + "lib/db");
 
 // Register static route for client files when /static/**** is route
 app.use('/node_modules', express.static(__appRoot + '/node_modules'));
-app.use('/__build__', express.static(__appRoot + '/__build__'));
-app.use('/', express.static(__appRoot + '/src'));
+app.use('/dist', express.static(__appRoot + '/dist'));
+app.use('/', express.static(__appRoot + '/dist'));
 
 // MIDDLEWARES
 var validatorObj = require(__base + "lib/validator");

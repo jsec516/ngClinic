@@ -52,4 +52,3 @@ export class App {
     }
 }
 
-bootstrap(App, [WindowService, COMMON_DIRECTIVES, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, HTTP_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);

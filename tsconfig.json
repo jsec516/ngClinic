@@ -1,17 +1,23 @@
 {
-  "version": "1.6.2",
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "target": "es5",
     "module": "commonjs",
     "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": false,
     "sourceMap": true
   },
-  "exclude": [
-    "node_modules",
-    "bower_components",
-    "bootstrap"
+  "files": [
+    "typings/main.d.ts",
+    "src/main.ts",
+    "src/vendor.ts"
   ],
-  "files": []
+  "filesGlob": [
+    "./src/**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": true }
 }

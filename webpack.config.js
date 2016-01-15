@@ -1,33 +1,57 @@
-var path = require('path');
-require('es6-promise').polyfill()
-var webpack = require('webpack');
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var ProvidePlugin = webpack.ProvidePlugin;
-//var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+// @AngularClass
 
+/*
+ * Helper: root(), and rootDir() are defined at the bottom
+ */
+var path = require('path');
+require('es6-promise').polyfill();
+// Webpack Plugins
+var ProvidePlugin = require('webpack/lib/ProvidePlugin');
+var DefinePlugin = require('webpack/lib/DefinePlugin');
+var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
+
+var metadata = {
+    title: 'Angular2 Webpack Starter by @gdi2990 from @AngularClass',
+    baseUrl: '/',
+    host: 'localhost',
+    port: 3000,
+    ENV: ENV
+};
+/*
+ * Config
+ */
 module.exports = {
+    // static data for index.html
+    metadata: metadata,
+    // for faster builds use 'eval'
     devtool: 'source-map',
-    debug: true, // set false in production
+    debug: true,
 
     entry: {
-        'vendor': './src/vendor.ts', // third party dependencies
-        'app': './src/app/app.ts' // our app
+        'vendor': './src/vendor.ts',
+        'main': './src/main.ts' // our angular app
     },
 
+    // Config for our build files
     output: {
-        path: root('__build__'),
-        filename: '[name].js',
+        path: root('dist'),
+        filename: '[name].bundle.js',
         sourceMapFilename: '[name].map',
-        chunkFilename: '[id].chunk.js',
-        pathinfo: true
+        chunkFilename: '[id].chunk.js'
     },
 
     resolve: {
+        // ensure loader extensions match
         extensions: ['', '.ts', '.js', '.json', '.css', '.html']
     },
 
     module: {
+        preLoaders: [{ test: /\.ts$/, loader: 'tslint-loader', exclude: [/node_modules/] }],
         loaders: [
+            // Support for .ts files.
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
@@ -43,58 +67,71 @@ module.exports = {
             },
 
             // Support for *.json files.
-            {test: /\.json$/, loader: 'json-loader'},
+            { test: /\.json$/, loader: 'json-loader' },
+      
+            // Support for Less 
+            //{ test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }, // use ! to chain loaders
+            { test: /\.less$/, loader: "style!css!less" },
+      
+            // Support for CSS as raw text
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
+
+            // support for .html as raw text
+            { test: /\.html$/, loader: 'raw-loader' },
             
-            // Support for *.html files.
-            {test: /\.html$/, loader: 'html-loader'},
-            
-            // support for .css
-            {test: /\.css$/, loaders: ['style', 'css']},
-            
-            // support for less
-            {test: /\.less$/, loader: "style!css!less"},
+            // support for image loading
+            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}, // inline base64 URLs for <=8k images, direct URLs for the rest
             
             // support for bootstrap font
             {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
                 loader: 'url-loader'
             }
-        ],
-        noParse: [/angular2-polyfills/]
+
+            // if you add a loader include the resolve file extension above
+        ]
     },
 
     plugins: [
-        new CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js', minChunks: Infinity}),
-        new CommonsChunkPlugin({name: 'common', filename: 'common.js', minChunks: 2, chunks: ['app', 'vendor']}),
+        new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
+        // static assets
+        new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
+        // generating html
+        new HtmlWebpackPlugin({ template: 'src/index.html', inject: false }),
+        // provide plugin
         new ProvidePlugin({
             $: "jquery",
-            // jQuery: "jquery",
+            jQuery: "jquery",
             Cookies: "js-cookie",
-            moment_: 'moment',
             gsap: 'gsap'
+        }),
+        // replace
+        new DefinePlugin({
+            'process.env': {
+                'ENV': JSON.stringify(metadata.ENV),
+                'NODE_ENV': JSON.stringify(metadata.ENV)
+            }
         })
-//        new UglifyJsPlugin() // use for production
     ],
 
     // Other module loader config
     tslint: {
-        emitErrors: true,
+        emitErrors: false,
         failOnHint: false
     },
     // our Webpack Development Server config
     devServer: {
-        contentBase: 'src',
-        publicPath: '/__build__',
-        colors: true,
-        progress: true,
-        port: 3000,
-        displayCached: true,
-        displayErrorDetails: true,
-        inline: true
-    }
+        port: metadata.port,
+        host: metadata.host,
+        historyApiFallback: true,
+        watchOptions: { aggregateTimeout: 300, poll: 1000 }
+    },
+    // we need this due to problems with es6-shim
+    node: { global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false }
 };
 
 // Helper functions
+
 function root(args) {
     args = Array.prototype.slice.call(arguments, 0);
     return path.join.apply(path, [__dirname].concat(args));

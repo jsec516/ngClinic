@@ -1,16 +1,40 @@
-require('./lib/bootstrap/less/bootstrap.less');
-require('./css/datepicker.css');
-require('./css/main.css');
+// css
+require('./assets/lib/bootstrap/less/bootstrap.less');
+require('./assets/css/datepicker.css');
+require('./assets/css/main.css');
 
-import 'angular2/bundles/angular2-polyfills';
+// Polyfills
+import 'es6-shim';
+// (these modules are what are in 'angular2/bundles/angular2-polyfills' so don't use that here)
+import 'es6-promise';
+import 'zone.js/lib/browser/zone-microtask';
 
+if ('production' !== process.env.ENV) {
+  // Reflect Polyfill
+  require('es7-reflect-metadata/dist/browser');
+  Error['stackTraceLimit'] = Infinity;
+  Zone['longStackTraceZone'] = require('zone.js/lib/zones/long-stack-trace.js');
+}
+
+if ('production' === process.env.ENV) {
+  // Reflect with es7-reflect-metadata/reflect-metadata is added
+  // by webpack.prod.config ProvidePlugin
+  let ngCore = require('angular2/core');
+  ngCore.enableProdMode();
+}
+// Angular 2
 import 'angular2/platform/browser';
-import 'angular2/core';
-import 'angular2/http';
+import 'angular2/platform/common_dom';
 import 'angular2/router';
+import 'angular2/http';
+import 'angular2/core';
+
+// RxJS
+import 'rxjs';
+
 import 'moment';
 import 'gsap';
 
 // FOR WHATEVER REASON, THIS MUST COME AFTER THE ANGULAR2-POLYFILLS IMPORT
-require('imports?jQuery=jquery!./lib/bootstrap/bootstrap.min.js');
-require('imports?jQuery=jquery!./lib/bootstrap/bootstrap-datepicker.js');
+require('imports?jQuery=jquery!./assets/lib/bootstrap/bootstrap.min.js');
+require('imports?jQuery=jquery!./assets/lib/bootstrap/bootstrap-datepicker.js');
