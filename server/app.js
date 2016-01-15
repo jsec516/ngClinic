@@ -21,8 +21,13 @@ var app = express();
 var db = require(__base + "lib/db");
 
 // Register static route for client files when /static/**** is route
+var compression = require('compression');
+
+app.use('/node_modules', compression()); //use compression 
 app.use('/node_modules', express.static(__appRoot + '/node_modules'));
+app.use('/dist', compression()); //use compression 
 app.use('/dist', express.static(__appRoot + '/dist'));
+app.use('/', compression()); //use compression 
 app.use('/', express.static(__appRoot + '/dist'));
 
 // MIDDLEWARES
