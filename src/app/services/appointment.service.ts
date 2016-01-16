@@ -29,7 +29,7 @@ export class AppointmentService {
         }) };
         
         // this.practitioners = [{ name: 'Kevin fojfer', id: 1 }, { id: 2, name: 'Rebecca Risk' }];
-        this.http.get("http://localhost:8000/api/practitioners", options)
+        this.http.get("/api/practitioners", options)
         .subscribe((rep, err) => {
                 if (err) {
                     console.log("Error : ", err);
@@ -63,7 +63,7 @@ export class AppointmentService {
         
         
         // submit the request
-        this.http.post("http://localhost:8000/api/appt/save", body, options)
+        this.http.post("/api/appt/save", body, options)
             .subscribe((rep, err) => {
                 if (err) {
                     console.log("Error : ", err);

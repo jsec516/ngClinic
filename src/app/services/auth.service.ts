@@ -32,7 +32,7 @@ export class AuthService {
         let options = { "headers": new Headers({ "Content-Type": "application/json" }) };
         
         // send the request 
-        this.http.post("http://localhost:8000/jwt", body, options)
+        this.http.post("/jwt", body, options)
             .subscribe((rep, err) => {
                 if (err) {
                     console.log("Error : ", err);
@@ -66,7 +66,7 @@ export class AuthService {
         let options = { "headers": new Headers({ "Content-Type": "application/json" }) };
         
         // submit the request
-        this.http.post("http://localhost:8000/register", body, options)
+        this.http.post("/register", body, options)
             .subscribe((rep, err) => {
                 if (err) {
                     console.log("Error : ", err);

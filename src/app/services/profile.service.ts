@@ -21,7 +21,7 @@ export class ProfileService {
         }) };
        
         // send the request 
-        return this.http.get("http://localhost:8000/api/profile/"+user,  options);
+        return this.http.get("/api/profile/"+user,  options);
 
     }
     
