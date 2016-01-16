@@ -1,8 +1,8 @@
 {
   "name": "ngClinic",
   "version": "1.0.2",
-  "description": "A skeleton Angular2, Bootstrap 4, OAuth2 application using webpack (oh my!)",
-  "author": "Michael Oryl",
+  "description": "ngclinic - appointment online",
+  "author": "Jahidul Islam<exporter2022@gmail.com>",
   "scripts": {
     "clean:dist": "./node_modules/.bin/rimraf dist",
     "start": "webpack-dev-server --progress --colors --content-base src --port 3000 --display-cached --display-error-details --inline",
