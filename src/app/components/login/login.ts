@@ -27,6 +27,7 @@ export class Login implements OnInit, OnActivate, OnDeactivate {
         private _router: Router,
         private authService: AuthService
     ) {
+        this.authService.loginError='';
         this.model = new LoginForm('', '');
     }
 

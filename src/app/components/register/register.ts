@@ -35,6 +35,7 @@ export class Register implements OnInit, OnActivate, OnDeactivate {
         private authService: AuthService,
         private fb: FormBuilder
     ) {
+        this.authService.registerError='';
         this.email = new Control('', Validators.compose([Validators.required, EmailValidator.validEmail]), EmailValidator.emailAlreadyExist);
         this.registerForm = fb.group({
             firstName: new Control('', Validators.required),
